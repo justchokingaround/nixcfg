@@ -7,9 +7,9 @@
   imports = [
     inputs.hyprland.nixosModules.default
     ./fonts.nix
-    ./network.nix
     ./variables.nix
     ./pkgs.nix
+		./screenshot.nix
   ];
 
   # Hyprland

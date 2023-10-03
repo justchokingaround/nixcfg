@@ -9,6 +9,12 @@
     git
     unzip
     killall
+		uutils-coreutils
+		(ripgrep.override {
+			withPCRE2 = true;
+		})
+		# rm
+		fzf
     lf
     alacritty
     wezterm

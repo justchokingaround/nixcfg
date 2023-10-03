@@ -175,11 +175,11 @@
           # screenshot
           # $screenshotarea = hyprctl keyword animation "fadeOut,0,0,default"; grimblast --notify copy area; hyprctl keyword animation "fadeOut,1,4,default"
           # bind=$mainModSHIFT,S,exec, $screenshotarea
-          bind=,107,exec,screenshot.sh fullscreen
-          bind=SHIFT,107,exec,screenshot.sh selectarea
-          bind=CTRLSHIFT,107,exec,screenshot.sh quickedit
-          bind=$mainMod,107,exec,screenshot.sh quickcote
-          bind=$mainModSHIFT,107,exec,screenshot.sh save
+          bind=,107,exec,screenshot fullscreen
+          bind=SHIFT,107,exec,screenshot selectarea
+          bind=CTRLSHIFT,107,exec,screenshot quickedit
+          bind=$mainMod,107,exec,screenshot quickcote
+          bind=$mainModSHIFT,107,exec,screenshot save
 
           # screenrecording
           bind=,127,exec,~/scripts/screenrecord.sh start

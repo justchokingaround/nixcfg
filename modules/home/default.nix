@@ -13,7 +13,8 @@
     initialPassword = "changeme";
     home = "/home/chomsky/";
     description = "deez nuts";
-    extraGroups = ["wheel" "networkmanager" "dotfiles"];
+    extraGroups = ["wheel" "networkmanager"];
+		# shell = pkgs.zsh;
   };
 
   home-manager.users.chomsky = {
@@ -24,6 +25,7 @@
 
     imports = [
       ./hyprland
+			./zsh/default.nix
     ];
   };
 }
