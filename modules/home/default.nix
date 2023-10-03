@@ -1,15 +1,19 @@
-{ config, pkgs, inputs, ... }:
 {
-  imports = [ 
+  config,
+  pkgs,
+  inputs,
+  ...
+}: {
+  imports = [
     inputs.home-manager.nixosModules.home-manager
-  ]; 
+  ];
 
   users.users.chomsky = {
     isNormalUser = true;
     initialPassword = "changeme";
     home = "/home/chomsky/";
     description = "deez nuts";
-    extraGroups = [ "wheel" "networkmanager" "dotfiles" ];
+    extraGroups = ["wheel" "networkmanager" "dotfiles"];
   };
 
   home-manager.users.chomsky = {
@@ -19,7 +23,7 @@
     programs.home-manager.enable = true;
 
     imports = [
-		./hyprland
+      ./hyprland
     ];
   };
 }

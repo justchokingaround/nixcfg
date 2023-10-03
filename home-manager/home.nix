@@ -1,13 +1,13 @@
 {
   inputs,
-	outputs,
+  outputs,
   lib,
   config,
   pkgs,
   ...
 }: {
   imports = [
-	 ./hypr
+    ./hypr
   ];
 
   nixpkgs = {
@@ -22,7 +22,7 @@
     homeDirectory = "/home/chomsky";
   };
 
-	programs.neovim.enable = true;
+  programs.neovim.enable = true;
   programs.home-manager.enable = true;
   programs.git.enable = true;
   programs.alacritty.enable = true;

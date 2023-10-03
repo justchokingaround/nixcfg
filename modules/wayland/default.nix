@@ -1,11 +1,15 @@
-{ config, pkgs, inputs, ... }: 
 {
-  imports = [ 
-    inputs.hyprland.nixosModules.default 
+  config,
+  pkgs,
+  inputs,
+  ...
+}: {
+  imports = [
+    inputs.hyprland.nixosModules.default
     ./fonts.nix
-		./network.nix
+    ./network.nix
     ./variables.nix
-		./pkgs.nix
+    ./pkgs.nix
   ];
 
   # Hyprland
@@ -25,12 +29,12 @@
   };
 
   # Wayland tools
-  environment.systemPackages = with pkgs; [ 
+  environment.systemPackages = with pkgs; [
     wlr-randr
-    wl-clipboard 
+    wl-clipboard
     libsForQt5.qt5.qtwayland
     qt6.qtwayland
     wev
-		inputs.hyprland-contrib.packages.${pkgs.system}.grimblast
-   ];
+    inputs.hyprland-contrib.packages.${pkgs.system}.grimblast
+  ];
 }

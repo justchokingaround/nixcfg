@@ -1,14 +1,18 @@
-
-{ config, pkgs, inputs, ... }:
 {
+  config,
+  pkgs,
+  inputs,
+  ...
+}: {
   nixpkgs.config.allowUnfree = true;
   environment.systemPackages = with pkgs; [
-		rofi-wayland
+    rofi-wayland
     mako
     swww
-    (pkgs.waybar.overrideAttrs (oldAttrs: {
-      mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ];
-     })
+    (
+      pkgs.waybar.overrideAttrs (oldAttrs: {
+        mesonFlags = oldAttrs.mesonFlags ++ ["-Dexperimental=true"];
+      })
     )
   ];
 }
