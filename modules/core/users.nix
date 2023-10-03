@@ -14,4 +14,5 @@
   };
   users.users.root.initialPassword = "changeme";
   users.groups.dotfiles.gid = 995;
+	programs.zsh.enable = true;
 }

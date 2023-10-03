@@ -14,7 +14,7 @@
     home = "/home/chomsky/";
     description = "deez nuts";
     extraGroups = ["wheel" "networkmanager"];
-		# shell = pkgs.zsh;
+		shell = pkgs.zsh;
   };
 
   home-manager.users.chomsky = {
