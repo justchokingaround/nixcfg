@@ -9,7 +9,7 @@
     ./security.nix
     ./users.nix
     ./time.nix
-		./network.nix
+    ./network.nix
   ];
 
   boot.loader.systemd-boot.enable = true;

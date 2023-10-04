@@ -9,7 +9,7 @@
     ./fonts.nix
     ./variables.nix
     ./pkgs.nix
-		./screenshot.nix
+    ./screenshot.nix
   ];
 
   # Hyprland

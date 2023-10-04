@@ -4,6 +4,7 @@
   inputs = {
     # Nixpkgs
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    nur.url = "github:nix-community/NUR";
 
     # Home manager
     home-manager = {
@@ -18,6 +19,12 @@
     hyprland-contrib = {
       url = "github:hyprwm/contrib";
       inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    # oxocarbon my beloved
+    base16-oxocarbon = {
+      url = "github:shaunsingh/base16-oxocarbon";
+      flake = false;
     };
 
     fu.url = "github:numtide/flake-utils";
@@ -42,6 +49,7 @@
     self,
     nixpkgs,
     home-manager,
+    nur,
     ...
   } @ inputs: let
     inherit (self) outputs;

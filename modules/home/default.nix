@@ -1,8 +1,7 @@
-{
-  config,
-  pkgs,
-  inputs,
-  ...
+{ config
+, pkgs
+, inputs
+, ...
 }: {
   imports = [
     inputs.home-manager.nixosModules.home-manager
@@ -13,8 +12,8 @@
     initialPassword = "changeme";
     home = "/home/chomsky/";
     description = "deez nuts";
-    extraGroups = ["wheel" "networkmanager"];
-		shell = pkgs.zsh;
+    extraGroups = [ "wheel" "networkmanager" ];
+    shell = pkgs.zsh;
   };
 
   home-manager.users.chomsky = {
@@ -25,7 +24,8 @@
 
     imports = [
       ./hyprland
-			./zsh/default.nix
+      ./zsh
+      ./wezterm
     ];
   };
 }

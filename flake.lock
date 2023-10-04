@@ -21,6 +21,22 @@
         "type": "github"
       }
     },
+    "base16-oxocarbon": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1678827893,
+        "narHash": "sha256-AU7Yb9/RpK8IYJCeln4mvTEj9meaCeMe9eGHMRqVh9A=",
+        "owner": "shaunsingh",
+        "repo": "base16-oxocarbon",
+        "rev": "1145d41d0d17d31ae97c59173bd4793c869afcd4",
+        "type": "github"
+      },
+      "original": {
+        "owner": "shaunsingh",
+        "repo": "base16-oxocarbon",
+        "type": "github"
+      }
+    },
     "crane": {
       "inputs": {
         "flake-compat": "flake-compat",
@@ -178,11 +194,11 @@
         "xdph": "xdph"
       },
       "locked": {
-        "lastModified": 1696261738,
-        "narHash": "sha256-ujhtnd7vCZHJosOxTi4lgIyHA6iblYwXhx+ZS678fxw=",
+        "lastModified": 1696367817,
+        "narHash": "sha256-r16HUij8M3c0JMLLPaLdRJLHlSBhtVBWsR2+JZSW1B8=",
         "owner": "hyprwm",
         "repo": "Hyprland",
-        "rev": "b784931e678f907b1f1e41d04485fefd8a1faaf8",
+        "rev": "d61e4f9ad75d51f15eac6bced13439899d66a950",
         "type": "github"
       },
       "original": {
@@ -284,15 +300,32 @@
         "type": "github"
       }
     },
+    "nur": {
+      "locked": {
+        "lastModified": 1696375638,
+        "narHash": "sha256-JABB9rPbyWDYhWPI+EfTV17XST3VwP5fDIkhEdHzCWU=",
+        "owner": "nix-community",
+        "repo": "NUR",
+        "rev": "20f3ed166ebc2d34b56b6b6fb8f66c9e8a07bbec",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-community",
+        "repo": "NUR",
+        "type": "github"
+      }
+    },
     "root": {
       "inputs": {
         "alejandra": "alejandra",
+        "base16-oxocarbon": "base16-oxocarbon",
         "fu": "fu",
         "helix": "helix",
         "home-manager": "home-manager",
         "hyprland": "hyprland",
         "hyprland-contrib": "hyprland-contrib",
         "nixpkgs": "nixpkgs_3",
+        "nur": "nur",
         "sf-mono-liga-src": "sf-mono-liga-src"
       }
     },
