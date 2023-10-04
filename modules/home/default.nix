@@ -26,6 +26,7 @@
       ./hyprland
       ./zsh
       ./wezterm
+      ./mako
     ];
   };
 }
