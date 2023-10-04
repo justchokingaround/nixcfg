@@ -22,6 +22,10 @@
     };
 
     # oxocarbon my beloved
+    base16 = {
+      url = "github:shaunsingh/base16.nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     base16-oxocarbon = {
       url = "github:shaunsingh/base16-oxocarbon";
       flake = false;

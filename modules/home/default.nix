@@ -1,7 +1,7 @@
-{ config
-, pkgs
-, inputs
-, ...
+{
+  pkgs,
+  inputs,
+  ...
 }: {
   imports = [
     inputs.home-manager.nixosModules.home-manager
@@ -12,7 +12,7 @@
     initialPassword = "changeme";
     home = "/home/chomsky/";
     description = "deez nuts";
-    extraGroups = [ "wheel" "networkmanager" ];
+    extraGroups = ["wheel" "networkmanager"];
     shell = pkgs.zsh;
   };
 

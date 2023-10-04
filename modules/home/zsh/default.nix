@@ -1,6 +1,4 @@
-{ pkgs
-, ...
-}: {
+{pkgs, ...}: {
   programs.zoxide.enable = true;
 
   programs.zsh = {
@@ -127,7 +125,7 @@
     userName = "justchokingaround";
     userEmail = "ivanonarch@tutanota.com";
     delta.enable = true;
-    ignores = [ "**/.idea/" ];
+    ignores = ["**/.idea/"];
     extraConfig = {
       init.defaultBranch = "main";
     };
