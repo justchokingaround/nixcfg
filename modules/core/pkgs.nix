@@ -1,7 +1,6 @@
-{
-  pkgs,
-  inputs,
-  ...
+{ pkgs
+, inputs
+, ...
 }: {
   nixpkgs.config.allowUnfree = true;
   environment.systemPackages = with pkgs; [
@@ -12,16 +11,12 @@
     (ripgrep.override {
       withPCRE2 = true;
     })
-    # rm
     fzf
     lf
     alacritty
     wezterm
     ripgrep
-    (pkgs.discord.override {
-      withOpenASAR = true;
-      withVencord = true;
-    })
+    discord
     libnotify
     vivaldi
     neovim
@@ -32,5 +27,6 @@
     gcc
     nodejs
     gnumake
+    firefox
   ];
 }
