@@ -4,6 +4,7 @@
   inputs = {
     # Nixpkgs
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
     nur.url = "github:nix-community/NUR";
 
     # Home manager
@@ -13,7 +14,10 @@
     };
 
     # Hyprland
-    hyprland.url = "github:hyprwm/Hyprland/";
+    hyprland = {
+      url = "github:hyprwm/Hyprland/";
+      inputs.nixpkgs.follows = "nixpkgs-unstable";
+    };
 
     # Hyprwm contrib
     hyprland-contrib = {
@@ -49,27 +53,29 @@
     alejandra.url = "github:kamadorueda/alejandra/3.0.0";
   };
 
-  outputs = {
-    self,
-    nixpkgs,
-    home-manager,
-    nur,
-    ...
-  } @ inputs: let
-    inherit (self) outputs;
-  in {
-    formatter.x86_64-linux = inputs.alejandra.defaultPackage.x86_64-linux;
-    nixosConfigurations = {
-      justchokingaround = nixpkgs.lib.nixosSystem {
-        specialArgs = {inherit inputs outputs;};
-        modules = [
-          {networking.hostName = "justchokingaround";}
-          ./hosts/desktop/hardware-configuration.nix
-          ./modules/core/default.nix
-          ./modules/wayland/default.nix
-          ./modules/home/default.nix
-        ];
+  outputs =
+    { self
+    , nixpkgs
+    , home-manager
+    , nur
+    , hyprland
+    , ...
+    } @ inputs:
+    let
+      vars = {
+        user = "chomsky";
+        editor = "nvim";
       };
+      inherit (self) outputs;
+    in
+    {
+      formatter.x86_64-linux = inputs.alejandra.defaultPackage.x86_64-linux;
+      nixosConfigurations = (
+        import ./hosts {
+          inherit (nixpkgs) lib;
+          inherit inputs nixpkgs home-manager nur hyprland vars;
+        }
+      );
     };
-  };
 }
+
